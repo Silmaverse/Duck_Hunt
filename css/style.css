@@ -1,0 +1,28 @@
+/* -------common css start */
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&display=swap');
+body{
+    margin: 0;
+    padding: 0;
+    font-family: "Roboto Condensed", sans-serif;
+    background-image: url("../images/duckhunt-bg-4k.png");
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    cursor: url("../images/target.png"),auto;
+}
+img{
+    
+    vertical-align: middle;
+}
+p{
+    font-size: 30px;
+    color: white;
+}
+/* -------common css end */
+/* -------common css start */
+/* -------common css end */
+/* -------common css start */
+/* -------common css end */
+/* -------common css start */
+/* -------common css end */
