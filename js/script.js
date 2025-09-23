@@ -21,6 +21,11 @@ window.onload =function(){
     addDucks();
     setInterval(moveDucks ,1000/50);
 }
+document.addEventListener("click",()=>{
+
+    duch_quak_sound.play();
+    duck_flap_sound.play();
+})
 
 function addDucks(){
   
@@ -77,7 +82,7 @@ function addDucks(){
         }
 
         ducks.push(duck);
-        duch_quak_sound.play();
+        
     }
 
 }
@@ -114,8 +119,8 @@ function moveDucks(){
 
         duck.image.style.left =String(duck.x) + "px";
         duck.image.style.top =String(duck.y) + "px";
-        duck_flap_sound.play();
     }
+
 }
 
 
