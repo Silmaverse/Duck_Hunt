@@ -5,7 +5,7 @@ let duckWidth = 96;
 let duckHeight =93;
 let duckVelocityX =5;
 let duckVelocityY =5;
-let gameWidth =window.screen.width;
+let gameWidth =window.screen.width*0.8;
 let gameHeight = window.screen.height*3/4 ;
 
 let score=0;
