@@ -17,9 +17,35 @@ img{
     vertical-align: middle;
 }
 p{
-    font-size: 30px;
+    font-size: 20px;
     color: white;
     text-align: center;
+}
+
+h1{
+    color: red;
+    font-size: 50px;
+ 
+}
+.gameOver{
+    text-align: center;
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%);
+}
+
+h2{
+   font-size: 40px;
+   color:#5D2F77;
+   text-align: center;
+}
+button{
+    border-radius: 10px;
+    padding: 15px 25px;
+    background-color: #31326F;
+    color: white;
+    font-size: 20px;
+
 }
 /* -------common css end */
 /* -------common css start */

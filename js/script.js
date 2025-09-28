@@ -1,10 +1,12 @@
 let ducks;
+let timer=1000;
 let duckCount =1;
 let duckImages =["images/duck-left.gif" ,"images/duck-right.gif"];
 let duckWidth = 96;
 let duckHeight =93;
 let duckVelocityX =5;
 let duckVelocityY =5;
+let interval;
 let gameWidth =window.screen.width*0.8;
 let gameHeight = window.screen.height*3/4 ;
 
@@ -19,17 +21,20 @@ let duck_shot_sound = new Audio("music/duck-shot.mp3");
 
 window.onload =function(){
     addDucks();
-    setInterval(moveDucks ,1000/50);
+    interval =setInterval(moveDucks ,1000/50);
 }
-document.addEventListener("click",()=>{
+
+function playSounds(){
 
     duch_quak_sound.play();
     duck_flap_sound.play();
-})
+}
+
+document.addEventListener("click" ,playSounds);
 
 function addDucks(){
   
-  
+     timer =1000;
     ducks=[];
     duckCount =Math.floor(Math.random()*2)+1;
     for(let i =0 ; i<duckCount ;i++){
@@ -88,6 +93,7 @@ function addDucks(){
 }
 
 function moveDucks(){
+ 
     for(let i =0 ;i<ducks.length;i++){
 
         let  duck =ducks[i];
@@ -121,19 +127,47 @@ function moveDucks(){
         duck.image.style.top =String(duck.y) + "px";
     }
 
+    timer -=1;
+    document.querySelector(".time").innerHTML =`Timer : ${timer}s`;
+    if(timer <=0){
+        clearInterval(interval);
+        let h1 =document.createElement("h1");
+        let div = document.querySelector(".gameOver");
+        h1.innerHTML ="Game Over"
+        div.appendChild(h1);
+        let btn = document.createElement("button");
+        btn.innerHTML="Restart"
+        div.appendChild(btn);
+      
+        ducks.forEach( d => d.image.remove());
+        document.removeEventListener("click" , playSounds);
+      
+        btn.addEventListener("click" ,()=>{
+            window.location.reload();
+        })
+
+      
+
+
+
+    }
+
 }
 
 
 function addDog(){
+    clearInterval(interval);
     let dogImage =document.createElement("img");
 
     if(duckCount == 1){
         dogImage.src ="images/dog-duck1.png";
         dogImage.width =172;
+       
     }
     else{
         dogImage.src ="images/dog-duck2.png";
         dogImage.width=224;
+      
         
     }
     
@@ -145,13 +179,16 @@ function addDog(){
     dogImage.style.transform ="translate(-50%)"
     dogImage.style.bottom ="0px";
     document.body.appendChild(dogImage);
+    
+    
 
     scoresound.play();
 
     setTimeout(()=>{
         document.body.removeChild(dogImage);
-         addDucks();
-    },1000)
+        addDucks();
+        interval =setInterval(moveDucks ,1000/50);
+    }, 3000)
     
 
 }
