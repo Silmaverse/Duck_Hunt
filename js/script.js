@@ -1,6 +1,6 @@
 let ducks;
 let duckCount =1;
-let duckImages =["../images/duck-left.gif" ,"../images/duck-right.gif"];
+let duckImages =["images/duck-left.gif" ,"images/duck-right.gif"];
 let duckWidth = 96;
 let duckHeight =93;
 let duckVelocityX =5;
@@ -12,10 +12,10 @@ let score=0;
 
 // music add
 
-let scoresound =new Audio("../music/dog-score.mp3");
-let duck_flap_sound =new Audio("../music/duck-flap.mp3");
-let duch_quak_sound = new Audio("../music/duck-quack.mp3");
-let duck_shot_sound = new Audio("../music/duck-shot.mp3");
+let scoresound =new Audio("music/dog-score.mp3");
+let duck_flap_sound =new Audio("music/duck-flap.mp3");
+let duch_quak_sound = new Audio("music/duck-quack.mp3");
+let duck_shot_sound = new Audio("music/duck-shot.mp3");
 
 window.onload =function(){
     addDucks();
@@ -128,11 +128,11 @@ function addDog(){
     let dogImage =document.createElement("img");
 
     if(duckCount == 1){
-        dogImage.src ="../images/dog-duck1.png";
+        dogImage.src ="images/dog-duck1.png";
         dogImage.width =172;
     }
     else{
-        dogImage.src ="../images/dog-duck2.png";
+        dogImage.src ="images/dog-duck2.png";
         dogImage.width=224;
         
     }
